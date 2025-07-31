@@ -1,0 +1,12 @@
+Weather App
+
+Display weather data fetched using API
+
+Starting concept: Display current weather data after fetching data using a weather API.
+
+Expansion possibility: 
+    - Add predicted weather data for next day.
+    - Add ability to select location (each location can be an object)
+
+
+
