@@ -6,7 +6,7 @@ from geopy.geocoders import Nominatim
 list_of_locations = ["Philadelphia, PA", "Hanover, MD", "Columbus, OH"] # Starting small, can be "drop-down"-selected, or better "entry-completed"
 
 # Find geo-tags (lat-lon, gridpoints, zipcodes)
-def find_address_latlon(location):
+def find_address_gps(location):
     '''
     Find the address and GPS coordinates of any city.
 
