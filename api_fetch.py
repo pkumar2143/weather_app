@@ -13,11 +13,23 @@ psu_fzoneID = "PAZ019" # Arboretum @ PSU
 psu_lat_lon = "40.80642,-77.86902"
 psu_station_id = "KUNV"
 
+def find_nearest_obs_station(lat, lon):
+    api_call = f"https://api.weather.gov/points/{lat},{lon}"
+    try:
+        response = requests.get(api_call)
+
+        if response.status_code == 200:
+            print("...Successful Call...")
+            return response.json()
+        else:
+            print(f"Error:{response.status_code}")
+            return None
+    except:
+        print("There was a BIG BAD ERROR!!!")
+
 
 def get_observation():
-    #final_call = base_url + "zones/forecast/"+psu_fzoneID+"/observations"
-    final_call = base_url+f"/stations/{psu_station_id}/observations/latest" # nearby airport
-    #/zones/forecast/{zoneId}/observations
+    final_call = base_url + "zones/forecast/"+psu_fzoneID+"/observations"
     try:
         print(f"Trying call: {final_call}")
         response = requests.get(final_call)
