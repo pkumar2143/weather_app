@@ -8,10 +8,11 @@ for location in list_of_locations:
     print(f"\n ----- {location} ----- ")
     hunter1 = LocationHunter(location)
 
-    print(hunter1.geolocator)
-    print(hunter1.location)
-    print(hunter1.latitude)
-    print(hunter1.longitude)
+    #print(hunter1.geolocator)
+    print(f">>> LOCATION = {hunter1.location}")
+    print(f">>> LATITUDE = {hunter1.latitude}")
+    print(f">>> LONGITUDE = {hunter1.longitude}")
+    print(f">>> NEAREST OBS STATION CALL = {hunter1.nearest_obs_st}")
 
     # Should not be accessed in such a manner
     #print(hunter1._location)

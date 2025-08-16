@@ -11,10 +11,10 @@ response_body = find_nearest_obs_station(psu_lat_lon[0], psu_lat_lon[1])
 print("---- Response Body ---- \n", response_body)
 
 properties = response_body['properties']
-print(" >>> Properties:\n", properties)
+#print(" >>> Properties:\n", properties)
 
 obs_station_call = properties['observationStations']
-print(" >>> Stations within Gridpoint Call:\n", obs_station_call)
+#print(" >>> Stations within Gridpoint Call:\n", obs_station_call)
 
 try:
     response = requests.get(obs_station_call)
@@ -35,9 +35,9 @@ except:
     print("Nope!")
 
 obs_response_json = obs_response.json()
-print(f"Observation Response = \n{obs_response_json}")
+#print(f"Observation Response = \n{obs_response_json}")
 obs_response_json_props = obs_response_json['features'][0]['properties']
-print(f"Observation properties = \n{obs_response_json_props}")
+#print(f"Observation properties = \n{obs_response_json_props}")
 temp = obs_response_json_props['temperature']['value']
 text_description = obs_response_json_props['textDescription']
 print(f"Temperature = {temp} deg C, Text Description = {text_description}")
